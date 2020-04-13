@@ -70,7 +70,7 @@
             if(descricao){
                 params.append('descricao', descricao);
             }
-            fetch('https://fazumbem.herokuapp.com/entidade', {method:'POST', mode:"no-cors", body:params});
+            fetch('https://fazumbem.herokuapp.com/entidade', {method:'POST', mode:"cors", body:params});
         }
     </script>
 </body>

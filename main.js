@@ -44,10 +44,16 @@ async function loadInstituicoes() {
         let grid = document.getElementById('grid-instituicoes');
         let html = '';
         for (entidade of entidades) {
+            let nome_entidade = entidade.nome;
+            if(nome_entidade.length > 40){
+                let nome_entidade_cut = nome_entidade.substring(0, 40);
+                nome_entidade = nome_entidade_cut + nome_entidade.substring(40, nome_entidade.length).split(' ')[0];
+                nome_entidade = nome_entidade + '...';
+            }
             html += 
             `<div class="card-instituicao">
                 <img src="./images/campanha_lauduz.jpg"/>
-                <p>${entidade.nome}</p>
+                <p>${nome_entidade}</p>
                 <p>Santa Maria</p>
             </div>`
         }

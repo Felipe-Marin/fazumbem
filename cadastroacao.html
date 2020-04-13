@@ -149,7 +149,7 @@
             if(image_file){
                 params.append('imagem_acao', image_file);
             }
-            fetch('https://fazumbem.herokuapp.com/acao', { method: 'POST', mode: "no-cors", body: params });
+            fetch('https://fazumbem.herokuapp.com/acao', { method: 'POST', mode: "cors", body: params });
         }
     </script>
 </body>
