@@ -82,6 +82,60 @@ body {
 
 }
 
+.side-menu {
+    width: 0px;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    overflow-x: hidden; 
+    background-color: rgb(3, 64, 116);
+    padding-top: 30px;
+    transition: 0.5s;
+}
+
+.side-menu>a {
+    display: block;
+    font-size: large;
+    text-decoration: none;
+    color: white;
+    padding: 5px 5px 5px 10px;
+    transition: 0.3s;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-image: url(images/close.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+
+}
+
+.modal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: 2;
+	background-color: rgba(0,0,0,.8);
+}
+
+.modal-content {
+	position: absolute;
+	top: calc(50% - 200px);
+	left: calc(50% - 200px);
+	width: 400px;
+	height: 400px;
+	background-color: white;
+	border-radius: 8px;
+}
+
 .titulo {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

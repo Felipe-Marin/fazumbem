@@ -1,6 +1,32 @@
 loadCampanhas();
 loadInstituicoes();
 
+document.getElementById('side-menu-button').addEventListener('click', showSideMenu);
+document.getElementById('menu-close-button').addEventListener('click', hideSideMenu);
+
+function showSideMenu() {
+    document.getElementById('side-menu').style.width = '200px';
+}
+
+function hideSideMenu() {
+    document.getElementById('side-menu').style.width = '0px';
+}
+
+function showModal() {
+	let modalHtml = `
+		<div id="modal" class="modal">
+			<div class="modal-content">
+				<a class="close-button" onclick="hideModal()"></a>
+			</div>
+		</div>`
+	document.body.innerHTML += modalHtml;
+}
+
+function hideModal() {
+	let modal = document.getElementById('modal');
+	document.body.removeChild(modal);
+}
+
 async function loadCampanhas() {
     const url = 'https://fazumbem.herokuapp.com/acao?tipo_request=all';
     const options = {
