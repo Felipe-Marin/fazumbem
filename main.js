@@ -14,17 +14,22 @@ function hideSideMenu() {
 
 function showModal() {
 	let modalHtml = `
-		<div id="modal" class="modal">
-			<div class="modal-content">
-				<a class="close-button" onclick="hideModal()"></a>
+		<div id="modal" class="modal modal-hide">
+			<div id="modal-content" class="modal-content">
+				<a class="close-button modal-hide"></a>
 			</div>
 		</div>`
-	document.body.innerHTML += modalHtml;
+    document.body.innerHTML += modalHtml;
+    document.getElementById('modal').addEventListener('click', e => {
+        hideModal(e);
+    });
 }
 
-function hideModal() {
-	let modal = document.getElementById('modal');
-	document.body.removeChild(modal);
+function hideModal(e) {
+    if(e.target.classList.contains('modal-hide')){
+	    let modal = document.getElementById('modal');
+        document.body.removeChild(modal);
+    }
 }
 
 async function loadCampanhas() {
@@ -41,7 +46,7 @@ async function loadCampanhas() {
         let html = '';
         for (acao of acoes) {
             html += 
-            `<div class="card-campanha">
+            `<div class="card-campanha" onclick="showModal()">
                 <img src="./images/campanha_lauduz.jpg" />
                 <div>
                     <p>Instituição promotora</p>
