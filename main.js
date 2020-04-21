@@ -14,20 +14,50 @@ function hideSideMenu() {
 
 function showModal() {
 	let modalHtml = `
-		<div id="modal" class="modal modal-hide">
-			<div id="modal-content" class="modal-content">
-				<a class="close-button modal-hide"></a>
+		<div id="modal-background" class="modal-background modal-hide">
+			<div id="modal" class="modal">
+                <a class="close-button modal-hide"></a>
+                <div class="modal-content">
+                    <div class="modal-content-header">
+                        <h1>Fabricação de Máscaras</h1>
+                        <p>Curso de moda do senai</p>
+                        <p>Beneficiado</p>
+                        <p>Local da Ação:</p>
+                        <img src="images/campanha_lauduz.jpg"></img>
+                        <p>Foto reprodução</p>
+                    </div>
+                    <div class="modal-content-card">
+                        <h1 style="background-color: #2e343b">Como a ação vai ajudar?</h1>
+                        <p>Texto de como a ação vai ajudar</p>
+                    </div>
+                    <div class="modal-content-card">
+                        <h1 style="background-color: #a2cca7">Como ajudar?</h1>
+                        <p>As doações podem ser entregues no Lar(Avenida Hélvio Basso, 1250, Bairro Duque de Caxias) ou em dinheiro</p>
+                    </div>
+                    <div class="modal-content-card">
+                        <h1 style="background-color: #ec2950">O que doar?</h1>
+                        <p>Com álcool gel e álcool para limpeza, fraldas geriátricas (G, GG e EG), papel higiênico, máscaras e luvas, 
+                        água sanitária, de desinfetante e detergente, shampoo, condicionador, repelente, sabão em pó e desodorante roll on e alimentos
+                        não perecíveis, como leite integral ou sem lactose, farinha de trigo, bolachas doces e salgadas, aveia, vinagre, arroz,
+                        macarrão, feijão, açúcar, café em pó e gelatina.
+                        </p>
+                    </div>
+                    <div class="modal-content-card">
+                        <h1 style="background-color: #f6b064">Links úteis</h1>
+                        <p>XYZ</p>
+                    </div>
+                </div>
 			</div>
 		</div>`
     document.body.innerHTML += modalHtml;
-    document.getElementById('modal').addEventListener('click', e => {
+    document.getElementById('modal-background').addEventListener('click', e => {
         hideModal(e);
     });
 }
 
 function hideModal(e) {
     if(e.target.classList.contains('modal-hide')){
-	    let modal = document.getElementById('modal');
+	    let modal = document.getElementById('modal-background');
         document.body.removeChild(modal);
     }
 }
